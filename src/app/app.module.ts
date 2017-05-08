@@ -14,6 +14,8 @@ import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { LayoutComponent } from './layout/layout.component';
+import { FooterComponent } from './footer/footer.component';
 
 const ROUTES : Routes = [
   { 
@@ -51,7 +53,9 @@ const ROUTES : Routes = [
     HeaderComponent,
     CarouselComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    LayoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

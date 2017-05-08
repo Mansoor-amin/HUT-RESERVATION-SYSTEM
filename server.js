@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/hutReservationSystem');
 
 // get our api routes
 const api = require('./server/routes/api');
+const general = require('./server/routes/general');
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(bodyPaerser.urlencoded({extended: false}));
 
 // Points static path to dist
 app.use(express.static(path.join(__dirname,'dist')));
-
+app.use(general);
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'dist/index.html'));
 });

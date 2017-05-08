@@ -8,7 +8,7 @@ var UserSchema = new Schema({
     Email: { type: String, unique: true, required: true },
     Password: String,
     CompanyName: String,
-    CreatedOn: { type: Date, defalt: Date.now() },
+    CreatedOn: { type: Date, default: Date.now() },
     FirebaseToken: String
 });
 var userModle = mongoose.model("users", UserSchema);
