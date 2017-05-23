@@ -5,8 +5,11 @@ const HutModle = require("../../DBrepo/HutModle");
 
 
 let router = express.Router();
-
-router.post("/create-user", (req, res)=>{
+router.use(function(req, res, next) {
+  console.log( req.method, req.url, req.path);
+  next();
+});
+router.post("/sign-up", (req, res)=>{
     UserModle.saveUser(req.body.data)
                 .then((userInstaance)=>{
                     res.send({status: true, user: userInstaance});

@@ -2,14 +2,17 @@ var mongoose = require("mongoose");
 var q = require("q");
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
-    Name: String,
-    PhoneNo: Number,
-    userType: String,
-    Email: { type: String, unique: true, required: true },
-    Password: String,
-    CompanyName: String,
-    CreatedOn: { type: Date, default: Date.now() },
-    FirebaseToken: String
+    name: String,
+    phoneNo: Number,
+    location:Object,
+    userType: {type: String, default: "user"},
+    email: { type: String, unique: true},
+    password: String,
+    city:Object,
+    state:Object,
+    country:Object,
+    createdOn: { type: Date, default: Date.now() },
+    modifiedOn: {type: Date},
 });
 var userModle = mongoose.model("users", UserSchema);
 function saveUser(userProps) {
